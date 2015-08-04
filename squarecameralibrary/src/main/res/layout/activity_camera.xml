@@ -43,6 +43,7 @@
         android:layout_below="@id/camera_title" />
 
     <com.moocher.squarecameralibrary.GridView
+        android:id="@+id/camera_grid"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_below="@id/camera_title"/>
@@ -79,6 +80,7 @@
             android:gravity="center">
 
             <ImageView
+                android:id="@+id/camera_take"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:src="@mipmap/btn_take_picture"/>
@@ -93,6 +95,7 @@
             android:gravity="center">
 
             <ImageView
+                android:id="@+id/camera_show_grid"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:src="@mipmap/icon_grid_selected"/>

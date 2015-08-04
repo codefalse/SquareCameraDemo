@@ -25,6 +25,11 @@ public class MainActivity extends ActionBarActivity {
             @Override
             public void onClick(View v) {
                 Intent intent = new Intent(MainActivity.this, CameraActivity.class);
+
+                Bundle bundle = new Bundle();
+                //设置生成图片的尺寸大小
+                bundle.putInt("square-length", 600);
+                intent.putExtras(bundle);
                 startActivity(intent);
             }
         });
