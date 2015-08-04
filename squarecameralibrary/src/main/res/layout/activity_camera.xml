@@ -42,6 +42,11 @@
         android:layout_height="wrap_content"
         android:layout_below="@id/camera_title" />
 
+    <com.moocher.squarecameralibrary.GridView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/camera_title"/>
+
     <View
         android:id="@+id/camera_cover"
         android:layout_width="match_parent"
