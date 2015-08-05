@@ -4,7 +4,8 @@
     <application
         android:allowBackup="true"
         android:label="@string/app_name">
-        <activity android:name=".CameraActivity" android:screenOrientation="portrait" android:theme="@style/AppBase" />
+        <activity android:name=".CameraActivity" android:screenOrientation="portrait" android:theme="@style/AppBaseLight" />
+        <activity android:name=".AlbumActivity" android:screenOrientation="portrait" android:theme="@style/AppBaseDark" />
     </application>
 
 </manifest>

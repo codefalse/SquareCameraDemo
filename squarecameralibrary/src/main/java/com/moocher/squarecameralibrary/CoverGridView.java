@@ -9,7 +9,7 @@ import android.view.View;
 /**
  * Created by moocher on 2015/8/4.
  */
-public class GridView extends View {
+public class CoverGridView extends View {
     private static final String TAG = "GridView";
 
     private float edgeLength;
@@ -17,17 +17,17 @@ public class GridView extends View {
     private float linePos;
     private Paint mPaint;
 
-    public GridView(Context context){
+    public CoverGridView(Context context){
         super(context);
         initView(context);
     }
 
-    public GridView(Context context, AttributeSet attrs){
+    public CoverGridView(Context context, AttributeSet attrs){
         super(context, attrs);
         initView(context);
     }
 
-    public GridView(Context context, AttributeSet attrs, int defStyle){
+    public CoverGridView(Context context, AttributeSet attrs, int defStyle){
         super(context, attrs, defStyle);
         initView(context);
     }

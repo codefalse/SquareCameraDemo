@@ -1,3 +1,4 @@
 <resources>
     <string name="app_name">SquareCameraLibrary</string>
+    <string name="album_name">相册</string>
 </resources>
