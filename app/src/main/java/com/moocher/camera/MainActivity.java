@@ -55,9 +55,12 @@ public class MainActivity extends ActionBarActivity {
     protected void onActivityResult(int requestCode, int resultCode, Intent data) {
         super.onActivityResult(requestCode, resultCode, data);
         if(requestCode == REQUEST_TAKE_PICTURE_CODE && resultCode == RESULT_OK){
-//            Bitmap bitmap = BitmapFactory.decodeFile(saveFile.getAbsolutePath());
+            //set ImageStore.SQUARE_EXTRA_OUTPUT_KEY
+            //Bitmap bitmap = BitmapFactory.decodeFile(saveFile.getAbsolutePath());
+            //if not set. default
             byte[] buffer = data.getByteArrayExtra("data");
             Bitmap bitmap = BitmapFactory.decodeByteArray(buffer, 0, buffer.length);
+
             show.setImageBitmap(bitmap);
         }else if(resultCode == CameraActivity.RESULT_ALBUMS && requestCode == REQUEST_TAKE_PICTURE_CODE){
             String imagePath = data.getStringExtra("imagePath");
