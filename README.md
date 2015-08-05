@@ -45,11 +45,8 @@ protected void onActivityResult(int requestCode, int resultCode, Intent data) {
 if resultCode equals RESULT_OK, show returned from the square camera. if resultCode equals CameraActivity.RESULT_ALBUMS, show returned from the albums.
 ## Screenshot
 Square Camera View  
-
 ![square camera](screenshot/camera.png)  
-
 Albums View  
-
-![albums](screenshot/albums.png)
+![albums](screenshot/albums.png)  
 ## Used Tools
 Used Glide loader image. Want to know more about Glide. click [Glide](https://github.com/bumptech/glide)
