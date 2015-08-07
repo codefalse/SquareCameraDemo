@@ -3,23 +3,18 @@ package com.moocher.camera;
 import android.content.Intent;
 import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
-import android.net.Uri;
 import android.os.Environment;
 import android.support.v7.app.ActionBarActivity;
 import android.os.Bundle;
-import android.util.Log;
-import android.view.Menu;
-import android.view.MenuItem;
 import android.view.View;
 import android.widget.ImageView;
 import android.widget.TextView;
 
 import com.bumptech.glide.Glide;
-import com.moocher.squarecameralibrary.CameraActivity;
+import com.moocher.squarecameralibrary.SquareCameraActivity;
 import com.moocher.squarecameralibrary.ImageStore;
 
 import java.io.File;
-import java.lang.annotation.Target;
 
 
 public class MainActivity extends ActionBarActivity {
@@ -42,7 +37,7 @@ public class MainActivity extends ActionBarActivity {
         camera.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent intent = new Intent(MainActivity.this, CameraActivity.class);
+                Intent intent = new Intent(MainActivity.this, SquareCameraActivity.class);
                 intent.putExtra(ImageStore.SQUARE_LENGTH_KEY, 600);
                 //intent.putExtra(ImageStore.SQUARE_EXTRA_OUTPUT_KEY, Uri.fromFile(saveFile));
                 startActivityForResult(intent, REQUEST_TAKE_PICTURE_CODE);
@@ -62,7 +57,7 @@ public class MainActivity extends ActionBarActivity {
             Bitmap bitmap = BitmapFactory.decodeByteArray(buffer, 0, buffer.length);
 
             show.setImageBitmap(bitmap);
-        }else if(resultCode == CameraActivity.RESULT_ALBUMS && requestCode == REQUEST_TAKE_PICTURE_CODE){
+        }else if(resultCode == SquareCameraActivity.RESULT_ALBUMS && requestCode == REQUEST_TAKE_PICTURE_CODE){
             String imagePath = data.getStringExtra("imagePath");
             Glide.with(this)
                     .load(imagePath)

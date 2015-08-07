@@ -38,7 +38,7 @@ import java.util.List;
 /**
  * Created by moocher on 2015/8/2.
  */
-public class CameraActivity extends AppCompatActivity implements SurfaceHolder.Callback, Camera.PictureCallback, LoaderManager.LoaderCallbacks<Cursor> {
+public class SquareCameraActivity extends AppCompatActivity implements SurfaceHolder.Callback, Camera.PictureCallback, LoaderManager.LoaderCallbacks<Cursor> {
     private static final String TAG = "CameraActivity";
 
     public static final int REQUEST_ALBUMS_CODE = 0x110;
@@ -87,7 +87,7 @@ public class CameraActivity extends AppCompatActivity implements SurfaceHolder.C
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_camera);
+        setContentView(R.layout.activity_square_camera);
 
         initViewAndListener();
 
@@ -157,7 +157,7 @@ public class CameraActivity extends AppCompatActivity implements SurfaceHolder.C
 
                                     } else {
                                         Log.e(TAG, "focus failed.");
-                                        Toast.makeText(CameraActivity.this, "聚焦失败", Toast.LENGTH_SHORT).show();
+                                        Toast.makeText(SquareCameraActivity.this, "聚焦失败", Toast.LENGTH_SHORT).show();
 
                                     }
                                     focusView.setVisibility(View.GONE);
@@ -230,7 +230,7 @@ public class CameraActivity extends AppCompatActivity implements SurfaceHolder.C
         takePictureView.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                mCamera.takePicture(null, null, null, CameraActivity.this);
+                mCamera.takePicture(null, null, null, SquareCameraActivity.this);
             }
         });
         cameraBack = (ImageView) findViewById(R.id.camera_back);
@@ -275,7 +275,7 @@ public class CameraActivity extends AppCompatActivity implements SurfaceHolder.C
         albumView.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent intent = new Intent(CameraActivity.this, AlbumActivity.class);
+                Intent intent = new Intent(SquareCameraActivity.this, AlbumActivity.class);
                 intent.putStringArrayListExtra("folder", folderNameList);
                 intent.putStringArrayListExtra("path", imagePathList);
                 startActivityForResult(intent, REQUEST_ALBUMS_CODE);
