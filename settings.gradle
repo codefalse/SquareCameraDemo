@@ -1,1 +1,1 @@
-include ':app', ':squarecameralibrary'
+include ':app', ':squarecameralibrary', ':squarecameralibrary_kotlin'

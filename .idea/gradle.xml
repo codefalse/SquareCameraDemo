@@ -12,6 +12,7 @@
             <option value="$PROJECT_DIR$" />
             <option value="$PROJECT_DIR$/app" />
             <option value="$PROJECT_DIR$/squarecameralibrary" />
+            <option value="$PROJECT_DIR$/squarecameralibrary_kotlin" />
           </set>
         </option>
       </GradleProjectSettings>

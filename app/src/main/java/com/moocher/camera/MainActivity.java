@@ -10,9 +10,7 @@ import android.view.View;
 import android.widget.ImageView;
 import android.widget.TextView;
 
-import com.bumptech.glide.Glide;
-import com.moocher.squarecameralibrary.SquareCameraActivity;
-import com.moocher.squarecameralibrary.ImageStore;
+import com.moocher.squarecameralibrary_kotlin.SquareCameraActivity;
 
 import java.io.File;
 
@@ -38,7 +36,7 @@ public class MainActivity extends ActionBarActivity {
             @Override
             public void onClick(View v) {
                 Intent intent = new Intent(MainActivity.this, SquareCameraActivity.class);
-                intent.putExtra(ImageStore.SQUARE_LENGTH_KEY, 600);
+                //intent.putExtra(ImageStore.SQUARE_LENGTH_KEY, 600);
                 //intent.putExtra(ImageStore.SQUARE_EXTRA_OUTPUT_KEY, Uri.fromFile(saveFile));
                 startActivityForResult(intent, REQUEST_TAKE_PICTURE_CODE);
             }
@@ -46,23 +44,23 @@ public class MainActivity extends ActionBarActivity {
 
     }
 
-    @Override
-    protected void onActivityResult(int requestCode, int resultCode, Intent data) {
-        super.onActivityResult(requestCode, resultCode, data);
-        if(requestCode == REQUEST_TAKE_PICTURE_CODE && resultCode == RESULT_OK){
-            //set ImageStore.SQUARE_EXTRA_OUTPUT_KEY
-            //Bitmap bitmap = BitmapFactory.decodeFile(saveFile.getAbsolutePath());
-            //if not set. default
-            byte[] buffer = data.getByteArrayExtra("data");
-            Bitmap bitmap = BitmapFactory.decodeByteArray(buffer, 0, buffer.length);
-
-            show.setImageBitmap(bitmap);
-        }else if(resultCode == SquareCameraActivity.RESULT_ALBUMS && requestCode == REQUEST_TAKE_PICTURE_CODE){
-            String imagePath = data.getStringExtra("imagePath");
-            Glide.with(this)
-                    .load(imagePath)
-                    .override(500, 500)
-                    .into(show);
-        }
-    }
+//    @Override
+//    protected void onActivityResult(int requestCode, int resultCode, Intent data) {
+//        super.onActivityResult(requestCode, resultCode, data);
+//        if(requestCode == REQUEST_TAKE_PICTURE_CODE && resultCode == RESULT_OK){
+//            //set ImageStore.SQUARE_EXTRA_OUTPUT_KEY
+//            //Bitmap bitmap = BitmapFactory.decodeFile(saveFile.getAbsolutePath());
+//            //if not set. default
+//            byte[] buffer = data.getByteArrayExtra("data");
+//            Bitmap bitmap = BitmapFactory.decodeByteArray(buffer, 0, buffer.length);
+//
+//            show.setImageBitmap(bitmap);
+//        }else if(resultCode == SquareCameraActivity.RESULT_ALBUMS && requestCode == REQUEST_TAKE_PICTURE_CODE){
+//            String imagePath = data.getStringExtra("imagePath");
+//            Glide.with(this)
+//                    .load(imagePath)
+//                    .override(500, 500)
+//                    .into(show);
+//        }
+//    }
 }
